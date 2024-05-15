@@ -184,25 +184,39 @@ namespace ariel {
         return !(*this == other);
     }
 
-    void Graph::operator++()  {
-         for (size_t i = 0; i < adjacencyMatrix.size(); ++i) {
+    Graph Graph::operator++() {  // prefix increment
+        for (size_t i = 0; i < adjacencyMatrix.size(); ++i) {
             for (size_t j = 0; j < adjacencyMatrix[i].size(); ++j) {
                 if(i != j){
-                adjacencyMatrix[i][j] = 1 + adjacencyMatrix[i][j];
+                ++adjacencyMatrix[i][j];
             }
         }
-      }
+    }
+        return *this;
     }
 
-    void Graph::operator--()  {
-         for (size_t i = 0; i < adjacencyMatrix.size(); ++i) {
+    Graph Graph::operator++(int) {  // postfix increment
+        Graph temp = *this;
+        ++(*this);  
+        return temp;
+    }
+
+    Graph Graph::operator--() {  // prefix decrement
+        for (size_t i = 0; i < adjacencyMatrix.size(); ++i) {
             for (size_t j = 0; j < adjacencyMatrix[i].size(); ++j) {
                 if(i != j){
-                adjacencyMatrix[i][j] = adjacencyMatrix[i][j] - 1;
+                --adjacencyMatrix[i][j];
             }
         }
     }
- }
+        return *this;
+    }
+
+    Graph Graph::operator--(int) {  // postfix decrement
+        Graph temp = *this;
+        --(*this);  
+        return temp;
+    }
 
      bool contains(const Graph& G1, const Graph& G2) {
 

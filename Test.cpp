@@ -80,9 +80,27 @@ void testGraphAddition() {
     };
     g5.loadGraph(graph5);
 
-    ++g5;
+   ariel::Graph g6;
+    vector<vector<int>> matrix6 = {
+        {0, 2, 1},
+        {2, 0, 2},
+        {1, 2, 0}
+    };
+    g6.loadGraph(matrix6);
 
-    assert(g5 == g4);
+    ariel::Graph g7;
+    ariel::Graph g8;
+
+    g7 = ++g5;
+    g8 = g5++;
+
+    assert(g7 == g6);
+    assert(g8 == g6);
+
+
+
+
+
 
 
     
@@ -156,15 +174,28 @@ void testGraphSubtraction() {
 
     ariel::Graph g5;
     vector<vector<int>> graph5 = {
-        {0, 2, 2},
-        {2, 0, 2},
-        {2, 2, 0}
+        {0, 1, 0},
+        {1, 0, 1},
+        {0, 1, 0}
     };
     g5.loadGraph(graph5);
 
-    --g5;
+   ariel::Graph g6;
+    vector<vector<int>> matrix6 = {
+        {0, 0, -1},
+        {0, 0, 0},
+        {-1, 0, 0}
+    };
+    g6.loadGraph(matrix6);
 
-    assert(g5 == g4);
+    ariel::Graph g7;
+    ariel::Graph g8;
+
+    g7 = --g5;
+    g8 = g5--;
+
+    assert(g7 == g6);
+    assert(g8 == g6);
 
 
 }

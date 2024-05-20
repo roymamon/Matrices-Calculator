@@ -252,7 +252,7 @@ namespace ariel {
         return count;
     }
 
-       bool Graph::operator>(const Graph& other) const {
+        bool Graph::operator>(const Graph& other) const {
         if (contains(*this, other)) {
         return true;
         }
@@ -293,9 +293,6 @@ namespace ariel {
         }
 
         return false;
-
-    
-  }
 
     
   }

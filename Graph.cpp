@@ -252,35 +252,50 @@ namespace ariel {
         return count;
     }
 
-        bool Graph::operator>(const Graph& other) const {
-        if (contains(*this, other)) return true;
-        if (contains(other, *this)) return false;
+       bool Graph::operator>(const Graph& other) const {
+        if (contains(*this, other)) {
+        return true;
+        }
+        if (contains(other, *this)) {
+        return false;
+        }
 
         int thisEdges = countEdges(adjacencyMatrix);
         int otherEdges = countEdges(other.adjacencyMatrix);
         if (thisEdges != otherEdges) {
             return (thisEdges > otherEdges);
         }
+ 
+        if(adjacencyMatrix.size() > other.adjacencyMatrix.size()){
+            return true;
+        }
 
-        return std::lexicographical_compare(other.adjacencyMatrix.begin(), other.adjacencyMatrix.end(),
-           adjacencyMatrix.begin(), adjacencyMatrix.end(),
-             std::greater<std::vector<int>>());
+        return false;
+        
     }
 
     bool Graph::operator<(const Graph& other) const {
-    if (contains(*this, other)) return false;  
-    if (contains(other, *this)) return true;   
+    if (contains(*this, other)) {
+    return false;  
+    }
+    if (contains(other, *this)) {
+    return true;   
+    }
 
     int thisEdges = countEdges(adjacencyMatrix);
     int otherEdges = countEdges(other.adjacencyMatrix);
     if (thisEdges != otherEdges) {
-        return thisEdges < otherEdges;  
+        return (thisEdges < otherEdges);  
     }
 
-    return std::lexicographical_compare(
-        adjacencyMatrix.begin(), adjacencyMatrix.end(),
-        other.adjacencyMatrix.begin(), other.adjacencyMatrix.end()
-    );
+    if(adjacencyMatrix.size() < other.adjacencyMatrix.size()){
+            return true;
+        }
+
+        return false;
+
+    
+  }
 
     
   }

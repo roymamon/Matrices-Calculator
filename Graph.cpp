@@ -226,9 +226,7 @@ namespace ariel {
         int size1 = matrix1.size();
         int size2 = matrix2.size();
 
-        if (size1 < size2) {
-            return false; 
-        }
+        
 
         for (int i = 0; i < size2; i++) {
             for (int j = 0; j < size2; j++) {
@@ -275,25 +273,25 @@ namespace ariel {
     }
 
     bool Graph::operator<(const Graph& other) const {
-    if (contains(*this, other)) {
-    return false;  
-    }
-    if (contains(other, *this)) {
-    return true;   
-    }
+        if (contains(other, *this)) {
+        return true;
+        }
+        if (contains(*this, other)) {
+        return false;
+        }
 
-    int thisEdges = countEdges(adjacencyMatrix);
-    int otherEdges = countEdges(other.adjacencyMatrix);
-    if (thisEdges != otherEdges) {
-        return (thisEdges < otherEdges);  
-    }
-
-    if(adjacencyMatrix.size() < other.adjacencyMatrix.size()){
+        int thisEdges = countEdges(adjacencyMatrix);
+        int otherEdges = countEdges(other.adjacencyMatrix);
+        if (thisEdges != otherEdges) {
+            return (thisEdges < otherEdges);
+        }
+ 
+        if(adjacencyMatrix.size() < other.adjacencyMatrix.size()){
             return true;
         }
 
         return false;
-
+        
     
   }
 

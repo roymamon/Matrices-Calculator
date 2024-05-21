@@ -20,10 +20,7 @@ g3[i][j] = g1[i][j] + g2[i][j]
 
 3." g1 += g2 ", same as g1 + g2, but doesnt create a new graph. it directly changes g1.
 
-4." ++g1 ", adds 1 to all the edges(prefix).
-
-5." g1++ ", adds 1 to all the edges(postfix).
-
+4." ++g1 ", adds 1 to all the edges.
 
 Subtraction:
 
@@ -34,10 +31,7 @@ g3[i][j] = g1[i][j] - g2[i][j]
 
 3." g1 -= g2 ", same as g1 - g2, but doesnt create a new graph. it directly changes g1.
 
-4." --g1 ", subtracts 1 from all the edges(prefix).
-
-5." g1-- ", subtracts 1 from all the edges(postfix).
-
+4." --g1 ", subtracts 1 from all the edges.
 
 Comparison:
 

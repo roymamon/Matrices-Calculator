@@ -223,13 +223,11 @@ namespace ariel {
         const auto& matrix1 = G1.getAdjacencyMatrix();
         const auto& matrix2 = G2.getAdjacencyMatrix();
 
-        int size1 = matrix1.size();
-        int size2 = matrix2.size();
+        int size = matrix1.size();
 
-        
 
-        for (int i = 0; i < size2; i++) {
-            for (int j = 0; j < size2; j++) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 if (matrix2[i][j] != 0 && (matrix1[i][j] == 0 || matrix1[i][j] < matrix2[i][j])) {
                     return false;
                 }

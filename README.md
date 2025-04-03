@@ -1,12 +1,6 @@
 # מטלה 2 - (Operator overload)
 
 
-this is a second project in systems programming b course
-an extension of the first project, Graphs and Algorithms, and operator overloading.
-
-the README regarding the Graphs and Algorithms(project 1) - 
-https://github.com/roymamon/Cpp_project1/blob/main/README.md
-
 in this project we overload several operators:
 
 Addition:

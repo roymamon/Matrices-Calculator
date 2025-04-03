@@ -1,7 +1,5 @@
 # מטלה 2 - (Operator overload)
 
-I.D: 322623323
-mail: mamon8521@gmail.com 
 
 this is a second project in systems programming b course
 an extension of the first project, Graphs and Algorithms, and operator overloading.
